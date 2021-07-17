@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Forms from "./Components/Forms.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+class App extends Component {
+  state = {
+    fields: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      subject: ''
+    }
+  }
+  onSubmit = (fields) => {
+    this.setState({ fields });
+
+  }
+  render() {
+    const { data } = this.state.fields;
+    return (
+      <div className="App">
+        <Forms onSubmit={fields => this.onSubmit(fields)} />
+        <p class="format-me">
+          First Name: {this.state.fields.firstName}<br></br>
+          Last Name: {this.state.fields.lastName}<br></br>
+          email: {this.state.fields.email}<br></br>
+          subject: {this.state.fields.subject}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </div>
+
+    )
+  }
 }
 
 export default App;
