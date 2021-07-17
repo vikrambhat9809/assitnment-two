@@ -27,7 +27,7 @@ class Forms extends Component {
     }
     handleSubjectChange = (event) => {
         this.setState({
-            subject:event.target.value
+            subject: event.target.value
         })
     }
 
@@ -46,9 +46,14 @@ class Forms extends Component {
     render() {
         return (
             <div className="Login">
-                <h2>Bailur Vikram Bhat</h2>
-                <p>20181CSE0090</p>
                 <form onSubmit={this.handleSubmit}>
+                <div>
+                        <p>Bailur Vikram Bhat</p>
+                        <p>20181CSE0090</p>
+                    </div>
+                    <div>
+                        <h1>Register</h1>
+                    </div>
                     <div>
                         <label>First Name</label>
                         <input required type="text" value={this.state.firstName} onChange={this.handleFirstNameChange}></input>
