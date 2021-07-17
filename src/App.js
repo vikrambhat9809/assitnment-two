@@ -20,10 +20,10 @@ class App extends Component {
       <div className="App">
         <Forms onSubmit={fields => this.onSubmit(fields)} />
         <p class="format-me">
-          First Name: {this.state.fields.firstName}<br></br>
-          Last Name: {this.state.fields.lastName}<br></br>
-          email: {this.state.fields.email}<br></br>
-          subject: {this.state.fields.subject}
+          {this.state.fields.firstName}<br></br>
+          {this.state.fields.lastName}<br></br>
+          {this.state.fields.email}<br></br>
+          {this.state.fields.subject}
         </p>
       </div>
 

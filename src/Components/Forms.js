@@ -7,7 +7,7 @@ class Forms extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            subject: ''
+            subject: null
         }
     }
     handleFirstNameChange = (event) => {
@@ -58,8 +58,9 @@ class Forms extends Component {
                         <input required type="email" value={this.state.email} onChange={this.handleEmailChange}></input>
                         <br></br>
                         <label for="subjects">Choose a subject: </label>
-                        <select name="subject" id="subject" value={this.state.subject} onChange={this.handleSubjectChange}>
-                            <option value="react">React</option>
+                        <select required name="subject" id="subject" value={this.state.subject} onChange={this.handleSubjectChange}>
+                            <option >None</option>
+                            <option value="react" >React</option>
                             <option value="angular">Angular</option>
                             <option value="django">Django</option>
                             <option value="flask">Flask</option>
